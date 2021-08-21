@@ -1,43 +1,23 @@
 import React from "react"
-import styled from "styled-components"
 import { CgArrowUpO, CgArrowDownO, CgComment } from "react-icons/cg"
 import { FlexStyleSpaceBetween } from "../theme/GlobalStyle"
 
-const TopicStyle = styled.div`
-  margin-top: 2px;
-  padding: 1em;
-  background-color: #fff;
-`
+// Importing Style
+import {
+  TopicStyle,
+  StatusStyle,
+  TopicCreatorStyle,
+  TopicTitleStyle,
+} from "./Topics-style"
 
-const StatusStyle = styled.div`
-  padding: 0.5em;
-  border: 1px solid #efefed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 5em;
-  margin-right: 10px;
-  border-radius: 16px;
-`
+// Interface @ts-ignore
+import { TopicsIfProps } from "../interface/topicIf"
 
-const TopicCreatorStyle = styled.div`
-  font-weight: bold;
-  margin-bottom: 1em;
-  font-size: 1em;
-`
-
-const TopicTitleStyle = styled.div`
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 1em;
-`
-function Topics() {
+function Topics({ topic }: TopicsIfProps) {
   return (
     <TopicStyle>
-      <TopicCreatorStyle>I_AM_THE_CREATOR</TopicCreatorStyle>
-      <TopicTitleStyle>
-        WeekEnd Stupid Questions Thread - 07 August 2021
-      </TopicTitleStyle>
+      <TopicCreatorStyle>{topic.creator}</TopicCreatorStyle>
+      <TopicTitleStyle>{topic.title}</TopicTitleStyle>
       <FlexStyleSpaceBetween>
         <FlexStyleSpaceBetween>
           <StatusStyle>

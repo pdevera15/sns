@@ -1,6 +1,6 @@
-const { MongoClient } = require("mongodb")
+import { MongoClient } from "mongodb"
 
-const userinfoschema = async (conn) => {
+const userinfoschema = async (conn: MongoClient) => {
   await conn.db(process.env.DB_NAME).command({
     collMod: "userinfo",
     validator: {

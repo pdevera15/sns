@@ -1,4 +1,4 @@
-let userinfos
+let userinfos: any
 
 interface userinfoinf {
   username: string

@@ -1,5 +1,14 @@
 {
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "include": [
+    "MongoDbInit.ts",
+    "index.ts",
+    "database/**/*",
+    "schema/*",
+    "services/*"
+  ],
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "types": ["node"]
+    "outDir": "dist"
   }
 }

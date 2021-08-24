@@ -1,14 +1,9 @@
 import React from "react"
 import { CgArrowUpO, CgArrowDownO, CgComment } from "react-icons/cg"
-import { FlexStyleSpaceBetween } from "../theme/GlobalStyle"
+import { FlexStyleSpaceBetween, StatusStyle } from "../theme/GlobalStyle"
 
 // Importing Style
-import {
-  TopicStyle,
-  StatusStyle,
-  TopicCreatorStyle,
-  TopicTitleStyle,
-} from "./Topics-style"
+import { TopicStyle, TopicCreatorStyle, TopicTitleStyle } from "./Topics-style"
 
 // Interface @ts-ignore
 import { TopicsIfProps } from "../interface/topicIf"

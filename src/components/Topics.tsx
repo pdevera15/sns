@@ -19,10 +19,6 @@ function Topics({ topic }: TopicsIfProps) {
             <CgArrowUpO size={18} color={"#787c7e"} /> 6
             <CgArrowDownO size={18} color={"#787c7e"} />
           </StatusStyle>
-          <StatusStyle>
-            <CgComment size={18} color={"#787c7e"} />
-            600
-          </StatusStyle>
         </FlexStyleSpaceBetween>
         <FlexStyleSpaceBetween>Share</FlexStyleSpaceBetween>
       </FlexStyleSpaceBetween>

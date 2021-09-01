@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom"
 import { GlobalStyle } from "./theme/GlobalStyle"
+import { ChakraProvider, Container } from "@chakra-ui/react"
 
 // Components
 import Topics from "./components/Topics"
@@ -27,27 +28,28 @@ function App() {
   }, [])
 
   return (
-    <Fragment>
-      <GlobalStyle />
-      <Header />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Hero />
-            {topics
-              ? topics.map((topic, index) => (
-                  <Link to={`/topic/${topic._id}`} key={index}>
-                    <Topics topic={topic} />
-                  </Link>
-                ))
-              : "Loading"}
-          </Route>
-          <Route exact path="/topic/:id">
-            <Topic />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </Fragment>
+    <ChakraProvider>
+      <Container maxW="container.xl">
+        <Header />
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Hero />
+              {topics
+                ? topics.map((topic, index) => (
+                    <Link to={`/topic/${topic._id}`} key={index}>
+                      <Topics topic={topic} />
+                    </Link>
+                  ))
+                : "Loading"}
+            </Route>
+            <Route exact path="/topic/:id">
+              <Topic />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </Container>
+    </ChakraProvider>
   )
 }
 
